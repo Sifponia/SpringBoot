@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>HOME</title>
+</head>
+<body>
+
+<!--<h1 th:text="${mensaje}"></h1>
+<h2>hoy es [[${fecha}]]</h2>  -->
+
+<h1>Bienvenido</h1>
+<h2>Oferta de trabajo</h2>
+<p th:text="'Oferta ' + ${oferta}"></p>
+<p th:text="'salario ' + ${salario}"></p>
+<p th:text="'fecha ' + ${fecha}"></p>
+<p th:text="'vigente ' + ${vigente}"></p>
+
+
+</body>
+</html>

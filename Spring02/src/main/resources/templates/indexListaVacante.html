@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Tabla vacante</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+</head>
+
+
+<body>
+
+		<!-- referencia para pegar una imagen -->
+    <img th:src="@{/imagenes/jobs.png}" class="img-fluid" alt="Responsive image" />
+
+	<h1 class="text-center text-primary" >Lista de trabajos tipo vacante. Prueba con  imagenes</h1>
+
+	<table class="table table-hover">
+
+		<tr>
+		    <th>Logo</th>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Descripcion</th>
+			<th>Fecha</th>
+			<th>Salario</th>
+
+		</tr>
+
+		<!-- Hacemos uso del for each para iteral la lista vacante -->
+		<tr th:each="vacantes : ${listaVacante}">
+
+			<!-- Añadimos el tipo de dato, debe ser el nombtre igual que el object -->
+		    <td>
+		        <img th:src="@{/imagenes/{img} (img =${vacantes.imagen})}" >
+		    
+		    </td>
+			<td th:text="${vacantes.id}"></td>
+			<td th:text="${vacantes.nombre}"></td>
+			<td th:text="${vacantes.descripcion}"></td>
+			<td th:text="${vacantes.date}"></td>
+			<td th:text="${vacantes.salario}"></td>
+
+		</tr>
+
+
+
+	</table>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
